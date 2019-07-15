@@ -1,17 +1,52 @@
 <template lang="pug">
 #app
-  .nav
+  nav
+    img(src="./assets/ApolloStudio_Logo_White.svg")
+    span.mono apollo-studio{{$route.path === "/" ? "" : $route.path}}
   main
     router-view
 </template>
+
+<script>
+export default {
+  name: "apollo-studio-web",
+  mounted() {
+    window.vue = this
+  },
+}
+</script>
+
+
 <style lang="stylus">
 body, html
   margin: 0
   height: 100vh
   width: 100vw
+  background: #191919
+  color: #DCDCDC
+
+*
+  font-family: "Roboto", sans-serif
+
+  &.mono
+    font-family: "Roboto Mono", monospace
 
 #app
   height: 100%
   width: 100%
   position: relative
+
+  nav
+    height: 64px
+    width: 100%
+    position: relative
+    display: flex
+    align-items: center
+
+    img
+      height: 75%
+      margin: 0 16px
+
+    span
+      font-size: 1.5em
 </style>

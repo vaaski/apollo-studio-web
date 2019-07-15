@@ -8,13 +8,13 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "*",
-      redirect: "/blog",
-    },
-    {
       path: "/blog",
       name: "blog",
       component: require("./views/blog.vue").default,
+    },
+    {
+      path: "*",
+      redirect: "/blog",
     },
     // {
     //   path: "/about",
