@@ -20,8 +20,11 @@ export default {
 
   .inner
     font-size: 1.2em
-    padding: 0 3vw
-    padding-bottom: 64px
+    padding: 32px 3vw 64px 3vw
+
+    @media only screen and (min-width: 1000px)
+      padding: 32px 7vw 64px 7vw
+
 
     .markdown-body h1, .markdown-body h2
       border-bottom: 1px solid #424242
