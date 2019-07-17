@@ -13,6 +13,11 @@ export default new Router({
       component: require("./views/blog.vue").default,
     },
     {
+      path: "/post/:id",
+      name: "post",
+      component: require("./views/post.vue").default,
+    },
+    {
       path: "*",
       redirect: "/blog",
     },

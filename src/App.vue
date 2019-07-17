@@ -1,7 +1,7 @@
 <template lang="pug">
 #app
   nav
-    img(src="./assets/ApolloStudio_Logo_White.svg")
+    img(src="./assets/ApolloStudio_Logo_White.svg" @click="$router.push('/')")
     span.mono apollo-studio{{$route.path === "/" ? "" : $route.path}}
   main
     router-view
@@ -24,6 +24,18 @@ body, html
   width: 100vw
   background: #191919
   color: #DCDCDC
+  overflow-x: hidden
+
+::-webkit-scrollbar-track
+  background-color: #161616
+
+::-webkit-scrollbar
+  width: 5px
+  background-color: #161616
+
+::-webkit-scrollbar-thumb
+  background-color: #DCDCDC
+  border-radius: 5px 0 0 5px
 
 *
   font-family: "Roboto", sans-serif
@@ -46,6 +58,7 @@ body, html
     img
       height: 75%
       margin: 0 16px
+      cursor: pointer
 
     span
       font-size: 1.5em
