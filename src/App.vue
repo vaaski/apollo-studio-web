@@ -48,6 +48,29 @@ body, html
   width: 100%
   position: relative
 
+  a
+    color: #66afef
+    text-decoration: none
+
+    &
+      position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      height: 1px
+      background-color: #66afef
+      transform-origin: bottom right
+      transform: scaleX(0)
+      transition: transform 0.5s ease
+
+    &:hover::before
+      transform-origin: bottom left
+      transform: scaleX(1)
+
   nav
     height: 64px
     width: 100%

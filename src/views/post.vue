@@ -21,6 +21,7 @@ export default {
   .inner
     font-size: 1.2em
     padding: 0 3vw
+    padding-bottom: 64px
 
     .markdown-body h1, .markdown-body h2
       border-bottom: 1px solid #424242
@@ -29,10 +30,6 @@ export default {
     h1, h2, h3, h4, h5, h6
       font-family: "Roboto Mono", monospace
       color: white
-
-    a
-      color: #66afef
-      text-decoration: none
 
     a.anchor
       margin-right: 8px
