@@ -20,7 +20,7 @@ export default {
       "https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/contents"
     )).data
 
-    const getposts = () => {
+    const getposts = async () => {
       console.log("getting posts")
       posts.forEach(async (art, i, arr) => {
         const id = art.path.replace(".md", "")
@@ -30,8 +30,6 @@ export default {
           `https://raw.githubusercontent.com/mat1jaczyyy/apollo-studio-blog/master/${art.path}`
         )).data
         self.posts[id].title = text.split("\n\n")[0].replace("#", "")
-
-        console.log(text)
 
         self.posts[id].content = (await self.axios({
           url: `https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/contents/${id}.md`,
@@ -51,14 +49,20 @@ export default {
           self.$store.commit("set", ["posts", self.posts])
         self.$forceUpdate()
       })
+
+      const { data: last_commit } = await self.axios.get(
+        "http://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
+      )
+      self.$store.commit("set", ["last_commit", last_commit])
     }
 
     if (!self.$store.state.posts) getposts()
-    else
-      posts.forEach(art => {
-        const id = art.path.replace(".md", "")
-        if (!self.$store.state.posts[id]) getposts()
-      })
+    else {
+      const { data: last_commit } = await self.axios.get(
+        "http://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
+      )
+      if (self.$store.state.last_commit.sha !== last_commit.sha) getposts()
+    }
   },
 }
 </script>

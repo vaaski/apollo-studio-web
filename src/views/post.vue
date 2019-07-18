@@ -1,14 +1,23 @@
 <template lang="pug">
 .post
-  .inner(v-if="$store.state.posts[$route.params.id]" v-html="$store.state.posts[$route.params.id].content")
+  .inner(v-if="content || $store.state.posts[$route.params.id]"
+    v-html="content || $store.state.posts[$route.params.id].content")
 </template>
 
 <script>
 export default {
   name: "apollo-post",
-  mounted() {
-    if (!this.$store.state.posts[this.$route.params.id])
-      console.log("gotta fetch post")
+  data: () => ({
+    content: false,
+  }),
+  async mounted() {
+    const id = this.$route.params.id
+    if (!this.$store.state.posts[id]) {
+      this.content = (await this.axios({
+        url: `https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/contents/${id}.md`,
+        headers: { Accept: "application/vnd.github.v3.html" },
+      })).data
+    }
   },
 }
 </script>
@@ -24,7 +33,6 @@ export default {
 
     @media only screen and (min-width: 1000px)
       padding: 32px 7vw 64px 7vw
-
 
     .markdown-body h1, .markdown-body h2
       border-bottom: 1px solid #424242

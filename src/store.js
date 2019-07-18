@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const default_settings = {
   posts: false,
+  last_commit: false,
 }
 
 export default new Vuex.Store({
