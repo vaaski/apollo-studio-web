@@ -51,7 +51,7 @@ export default {
       })
 
       const { data: last_commit } = await self.axios.get(
-        "http://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
+        "https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
       )
       self.$store.commit("set", ["last_commit", last_commit])
     }
@@ -59,7 +59,7 @@ export default {
     if (!self.$store.state.posts) getposts()
     else {
       const { data: last_commit } = await self.axios.get(
-        "http://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
+        "https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/commits/master"
       )
       if (self.$store.state.last_commit.sha !== last_commit.sha) getposts()
     }
