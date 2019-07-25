@@ -2,7 +2,7 @@
 #app
   nav
     img(src="./assets/ApolloStudio_Logo_White.svg" @click="$router.push('/')")
-    span.mono apollo-studio
+    span.mono Apollo Studio
     .links
       template(v-for="(link, key) in nav" v-if="link")
         a(v-if="link.search('https://') >= 0" :href="link" target="_blank") {{key}}
@@ -19,6 +19,7 @@ export default {
       download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
       blog: "/blog",
       FAQ: "",
+      covers: "",
       guides: "https://github.com/mat1jaczyyy/apollo-studio/wiki",
       code: "https://github.com/mat1jaczyyy/apollo-studio",
     },
@@ -98,6 +99,7 @@ body, html
       a
         margin: 0 8px
         color: #DCDCDC
+
         &::before
           background-color: #DCDCDC
 

@@ -1,7 +1,7 @@
 <template lang="pug">
 .blog
   .showcase
-    carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF"
+    carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF" :autoplayHoverPause="true"
       :autoplay="true" :autoplayTimeout="5000" easing="cubic-bezier(0.77, 0, 0.175, 1)" :navigationEnabled="true").carousel
       slide(v-for="image in pictures").slide
         img(:src="image")
@@ -21,7 +21,7 @@ export default {
       track0: "https://i.imgur.com/0ObCItx.png",
       track1: "https://i.imgur.com/V0VDApe.png",
       start: "https://i.imgur.com/kB9XNrS.png",
-      pattern: "https://i.imgur.com/OuBTF81.png",
+      pattern: "https://i.imgur.com/WjOXayq.png",
       tracks: "https://i.imgur.com/hR4Ty1N.png",
     },
   }),
@@ -100,12 +100,19 @@ export default {
 .VueCarousel-navigation-next, .VueCarousel-navigation-prev
   outline: none !important
   color: #FFF !important
+  font-size: 16px
 
 .VueCarousel-navigation-prev
-  left: 33px !important
+  left: 5vw !important
+
+  @media only screen and (min-width: 1000px)
+    left: 7vw !important
 
 .VueCarousel-navigation-next
-  right: 33px !important
+  right: 5vw !important
+
+  @media only screen and (min-width: 1000px)
+    right: 7vw !important
 
 .blog
   width: 100%
@@ -128,10 +135,12 @@ export default {
       padding: 32px 7vw 64px 7vw
 
     .post
-      box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.25)
+      // box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.25)
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25)
       padding: 32px 3vw
       border-radius: 5px
       cursor: pointer
+      margin-bottom: 16px
 
       .date
         opacity: 0.5
