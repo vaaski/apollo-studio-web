@@ -2,7 +2,11 @@
 #app
   nav
     img(src="./assets/ApolloStudio_Logo_White.svg" @click="$router.push('/')")
-    span.mono apollo-studio{{$route.path === "/" ? "" : $route.path}}
+    span.mono apollo-studio
+    .links
+      template(v-for="(link, key) in nav" v-if="link")
+        a(v-if="link.search('https://') >= 0" :href="link" target="_blank") {{key}}
+        router-link(v-else :to="link") {{key}}
   main
     router-view
 </template>
@@ -10,6 +14,15 @@
 <script>
 export default {
   name: "apollo-studio-web",
+  data: () => ({
+    nav: {
+      download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
+      blog: "/blog",
+      FAQ: "",
+      guides: "https://github.com/mat1jaczyyy/apollo-studio/wiki",
+      code: "https://github.com/mat1jaczyyy/apollo-studio",
+    },
+  }),
   mounted() {
     window.vue = this
   },
@@ -77,6 +90,16 @@ body, html
     position: relative
     display: flex
     align-items: center
+
+    .links
+      position: absolute
+      right: 16px
+
+      a
+        margin: 0 8px
+        color: #DCDCDC
+        &::before
+          background-color: #DCDCDC
 
     img
       height: 75%

@@ -1,9 +1,15 @@
 <template lang="pug">
 .blog
+  .showcase
+    carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF"
+      :autoplay="true" :autoplayTimeout="5000" easing="cubic-bezier(0.77, 0, 0.175, 1)" :navigationEnabled="true").carousel
+      slide(v-for="image in pictures").slide
+        img(:src="image")
   .posts
-    .post(v-for="(art, i) in $store.state.posts" v-if="art.content && art.preview" @click="$router.push(`/post/${art.id}`)")
-      .title.mono {{ art.title }}
-      .preview(v-html="art.preview")
+    .post(v-for="post in sortedPosts" v-if="post.content && post.preview" @click="$router.push(`/post/${post.id}`)")
+      .title.mono {{ post.title }}
+      .date {{new Date(Number(post.id) * 1000).toLocaleDateString()}}
+      .preview(v-html="post.preview")
 </template>
 
 <script>
@@ -11,7 +17,26 @@ export default {
   name: "blog",
   data: () => ({
     posts: {},
+    pictures: {
+      track0: "https://i.imgur.com/0ObCItx.png",
+      track1: "https://i.imgur.com/V0VDApe.png",
+      start: "https://i.imgur.com/kB9XNrS.png",
+      pattern: "https://i.imgur.com/OuBTF81.png",
+      tracks: "https://i.imgur.com/hR4Ty1N.png",
+    },
   }),
+  computed: {
+    sortedPosts() {
+      const { state } = this.$store
+
+      if (!state.posts) return []
+      let ret = []
+      Object.keys(state.posts).forEach(key => {
+        ret.push(state.posts[key])
+      })
+      return ret.reverse()
+    },
+  },
   async mounted() {
     window.blog = this
     const self = this
@@ -45,8 +70,8 @@ export default {
           }
         )).data
 
-        if (i === arr.length - 1)
-          self.$store.commit("set", ["posts", self.posts])
+        console.log(self.posts)
+        self.$store.commit("set", ["posts", self.posts])
         self.$forceUpdate()
       })
 
@@ -68,8 +93,32 @@ export default {
 </script>
 
 <style lang="stylus">
+.VueCarousel-dot
+  outline: none !important
+  margin-top: 0 !important
+
+.VueCarousel-navigation-next, .VueCarousel-navigation-prev
+  outline: none !important
+  color: #FFF !important
+
+.VueCarousel-navigation-prev
+  left: 33px !important
+
+.VueCarousel-navigation-next
+  right: 33px !important
+
 .blog
   width: 100%
+
+  .showcase
+    .carousel
+      .slide
+        display: flex
+        justify-content: center
+        align-items: center
+
+        img
+          max-width: 95%
 
   .posts
     max-width: 100%
@@ -79,10 +128,13 @@ export default {
       padding: 32px 7vw 64px 7vw
 
     .post
-      box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.5)
+      box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.25)
       padding: 32px 3vw
       border-radius: 5px
       cursor: pointer
+
+      .date
+        opacity: 0.5
 
       .title
         font-size: 2em
@@ -92,7 +144,7 @@ export default {
         margin-bottom: 0
         font-size: 1.25em
         display: -webkit-box
-        -webkit-line-clamp: 2
+        -webkit-line-clamp: 3
         -webkit-box-orient: vertical
         // white-space: nowrap
         overflow: hidden
