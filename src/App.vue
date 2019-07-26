@@ -118,7 +118,7 @@ button.slide
     &::before
       content: ""
       position: absolute
-      bottom: 0
+      bottom: 5px
       left: 0
       right: 0
       height: 1px

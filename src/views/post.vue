@@ -1,7 +1,7 @@
 <template lang="pug">
 .post
   .inner(v-if="content || $store.state.posts[$route.params.id]"
-    v-html="content || $store.state.posts[$route.params.id].content")
+    v-html="content || $store.state.posts[$route.params.id].content" ref="inner")
 </template>
 
 <script>
@@ -11,13 +11,20 @@ export default {
     content: false,
   }),
   async mounted() {
-    const id = this.$route.params.id
-    if (!this.$store.state.posts[id]) {
-      this.content = (await this.axios({
+    const self = this
+    const id = self.$route.params.id
+    if (!self.$store.state.posts[id]) {
+      self.content = (await self.axios({
         url: `https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/contents/${id}.md`,
         headers: { Accept: "application/vnd.github.v3.html" },
       })).data
     }
+
+    // self.$nextTick(() => {
+    self.$refs.inner
+      .querySelectorAll("img")
+      .forEach(img => (img.closest("p").style.textAlign = "center"))
+    // })
   },
 }
 </script>
@@ -29,6 +36,10 @@ export default {
 
   .inner
     font-size: 1.2em
+
+    // button.slide
+    //   &::before
+    //     bottom: 5px
 
     p
       text-align: justify
