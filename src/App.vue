@@ -68,8 +68,8 @@ body, html
 *
   font-family: "Roboto", sans-serif
 
-  &.mono
-    font-family: "Roboto Mono", monospace
+  // &.mono
+  //   font-family: "Roboto Mono", monospace
 
 button.slide
   z-index: 1
@@ -155,6 +155,9 @@ button.slide
       display: flex
       justify-content: center
       align-items: center
+
+      span
+        font-weight: bold
 
     .right
       position: absolute

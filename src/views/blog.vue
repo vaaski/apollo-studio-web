@@ -180,6 +180,7 @@ export default {
       .title
         font-size: 2em
         margin-bottom: 4px
+        font-weight: bold
 
       .preview > p
         margin-bottom: 0
