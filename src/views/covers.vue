@@ -32,7 +32,7 @@ export default {
 
     self.db = self.fb.database().ref("covers")
     self.db.on("value", e => {
-      self.covers = e.val()
+      self.covers = e.val().reverse()
       console.log("ajbsfub")
     })
   },
