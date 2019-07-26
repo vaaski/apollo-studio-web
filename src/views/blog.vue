@@ -1,10 +1,14 @@
 <template lang="pug">
 .blog
-  .showcase
-    carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF" :autoplayHoverPause="true"
-      :autoplay="true" :autoplayTimeout="5000" easing="cubic-bezier(0.77, 0, 0.175, 1)" :navigationEnabled="true").carousel
-      slide(v-for="image in pictures").slide
-        img(:src="image")
+  .top
+    .splashtext
+      p Apollo Studio is a standalone editor and live playback engine for Launchpad light effects, solving all the problems we experience every day in Ableton Live. The innovation lies in support for true RGB colors (all 262k of them!), an improved workflow and better resource management. <br><br>Fly your Launchpad to the moon. ☆.。.:*・°☆
+      button(@click="open('https://github.com/mat1jaczyyy/apollo-studio/releases')").slide download
+    .showcase
+      carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF" :autoplayHoverPause="true"
+        :autoplay="true" :autoplayTimeout="5000" easing="cubic-bezier(0.77, 0, 0.175, 1)" :navigationEnabled="true").carousel
+        slide(v-for="image in pictures" :key="image").slide
+          img(:src="image")
   .posts
     .post(v-for="post in sortedPosts" v-if="post.content && post.preview" @click="$router.push(`/post/${post.id}`)")
       .title.mono {{ post.title }}
@@ -35,6 +39,11 @@ export default {
         ret.push(state.posts[key])
       })
       return ret.reverse()
+    },
+  },
+  methods: {
+    open(url) {
+      window.open(url, "_blank")
     },
   },
   async mounted() {
@@ -117,22 +126,41 @@ export default {
 .blog
   width: 100%
 
-  .showcase
-    .carousel
-      .slide
-        display: flex
-        justify-content: center
-        align-items: center
+  .top
+    display: flex
 
-        img
-          max-width: 95%
+    @media only screen and (max-width: 1000px)
+      flex-direction: column
+
+    .splashtext
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+
+      button
+        font-size: 1.5em
+        text-transform: uppercase
+
+      @media only screen and (min-width: 1000px)
+        padding-right: 0
+        max-width: 45%
+
+      p
+        font-size: 1.5em
+
+    .showcase
+      .carousel
+        .slide
+          display: flex
+          justify-content: center
+          align-items: center
+
+          img
+            max-width: 95%
 
   .posts
     max-width: 100%
-    padding: 64px 3vw 0 3vw
-
-    @media only screen and (min-width: 1000px)
-      padding: 32px 7vw 64px 7vw
 
     .post
       // box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.25)
