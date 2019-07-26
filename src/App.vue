@@ -24,7 +24,7 @@ export default {
       download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
       blog: "/blog",
       FAQ: "",
-      covers: "",
+      covers: "/covers",
       guides: "https://github.com/mat1jaczyyy/apollo-studio/wiki",
       code: "https://github.com/mat1jaczyyy/apollo-studio",
     },
@@ -191,7 +191,7 @@ button.slide
         &::before
           background-color: #DCDCDC
 
-    @media only screen and (max-width: 650px)
+    @media only screen and (max-width: 710px)
       height: 128px
       align-items: flex-start
 

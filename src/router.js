@@ -18,6 +18,11 @@ export default new Router({
       component: require("./views/post.vue").default,
     },
     {
+      path: "/covers",
+      name: "covers",
+      component: require("./views/covers.vue").default,
+    },
+    {
       path: "*",
       redirect: "/blog",
     },
