@@ -5,7 +5,7 @@
       p Apollo Studio is a standalone editor and live playback engine for Launchpad light effects, solving all the problems we experience every day in Ableton Live. The innovation lies in support for true RGB colors (all 262k of them!), an improved workflow and better resource management. <br><br>Fly your Launchpad to the moon. ☆.。.:*・°☆
       button(@click="open('https://github.com/mat1jaczyyy/apollo-studio/releases')").slide download
     .showcase
-      carousel(v-if="showcarousel" :perPage="1" paginationColor="#535353" paginationActiveColor="#FFF" :autoplayHoverPause="true"
+      carousel(:perPage="1" paginationColor="#535353" paginationActiveColor="#FFF" :autoplayHoverPause="true"
         :autoplay="true" :autoplayTimeout="5000" easing="cubic-bezier(0.77, 0, 0.175, 1)" :navigationEnabled="true").carousel
         slide(v-for="image in pictures" :key="image").slide
           img(:src="image")
@@ -28,7 +28,6 @@ export default {
       pattern: "https://i.imgur.com/WjOXayq.png",
       tracks: "https://i.imgur.com/hR4Ty1N.png",
     },
-    showcarousel: false,
   }),
   computed: {
     sortedPosts() {
@@ -98,10 +97,9 @@ export default {
       )
       if (self.$store.state.last_commit.sha !== last_commit.sha) getposts()
     }
-    self.showcarousel = true
-    setTimeout(() => {
+    // setTimeout(() => {
       window.dispatchEvent(new Event("resize"))
-    }, 100)
+    // }, 100)
   },
 }
 </script>
