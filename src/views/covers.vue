@@ -55,7 +55,7 @@ export default {
     .right
       width: 25%
 
-      @media only screen and (max-width: 1000px)
+      @media only screen and (max-width: 999px)
         display: none
 
       img
@@ -66,7 +66,7 @@ export default {
       width: 75%
       position: relative
 
-      @media only screen and (max-width: 1000px)
+      @media only screen and (max-width: 999px)
         width: 100%
         display: flex
         justify-content: center
@@ -81,7 +81,7 @@ export default {
 
       .title
         font-size: 1.25em
-        @media only screen and (max-width: 1000px)
+        @media only screen and (max-width: 999px)
           text-align: center
 
       .author

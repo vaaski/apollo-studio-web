@@ -98,7 +98,7 @@ export default {
       if (self.$store.state.last_commit.sha !== last_commit.sha) getposts()
     }
     // setTimeout(() => {
-      window.dispatchEvent(new Event("resize"))
+    window.dispatchEvent(new Event("resize"))
     // }, 100)
   },
 }
@@ -132,7 +132,7 @@ export default {
   .top
     display: flex
 
-    @media only screen and (max-width: 1000px)
+    @media only screen and (max-width: 999px)
       flex-direction: column
 
     .splashtext
@@ -165,6 +165,7 @@ export default {
 
   .posts
     max-width: 100%
+    padding-bottom: 64px
 
     .post
       // box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.25)

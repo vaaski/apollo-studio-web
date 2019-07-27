@@ -68,9 +68,6 @@ body, html
 *
   font-family: "Roboto", sans-serif
 
-  // &.mono
-  //   font-family: "Roboto Mono", monospace
-
 button.slide
   z-index: 1
   position: relative
@@ -200,7 +197,8 @@ button.slide
 
       .right
         top: 64px
-        transform: translateY(50%)
+        right: 50%
+        transform: translate(50%, 50%)
 
     img
       height: 75%
