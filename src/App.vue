@@ -10,7 +10,7 @@
         router-link(v-else :to="link") {{key}}
       hr
       i.fab.fa-patreon(@click="open('https://www.patreon.com/mat1jaczyyy')")
-      i.fab.fa-discord(@click="open('https://discord.gg/SP7DsUf')")
+      i.fab.fa-discord(@click="open('https://discord.gg/2ZSHYHA')")
       img(src="./assets/mat1-logo.png" @click="open('https://mat1jaczyyy.com')")
   main
     router-view.route
