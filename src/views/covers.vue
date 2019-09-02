@@ -29,6 +29,7 @@ export default {
   mounted() {
     const self = this
     window.covers = self
+    document.title = `Apollo Studio - covers`
 
     self.db = self.fb.database().ref("covers")
     self.db.on("value", e => {

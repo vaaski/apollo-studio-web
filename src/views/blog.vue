@@ -49,6 +49,7 @@ export default {
   async mounted() {
     window.blog = this
     const self = this
+    document.title = `Apollo Studio - blog`
 
     const posts = (await self.axios(
       "https://api.github.com/repos/mat1jaczyyy/apollo-studio-blog/contents"

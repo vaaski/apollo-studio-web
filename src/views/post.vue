@@ -19,6 +19,11 @@ export default {
         headers: { Accept: "application/vnd.github.v3.html" },
       })).data
     }
+    const post = self.content || self.$store.state.posts[self.$route.params.id]
+    document.querySelector("body").scrollTo(0, 0)
+    document.title = `Apollo Studio - blog post ${new Date(
+      Number(post.id) * 1000
+    ).toLocaleDateString()}`
 
     // self.$nextTick(() => {
     self.$refs.inner
