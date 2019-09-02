@@ -79,7 +79,6 @@ export default {
           }
         )).data
 
-        console.log(self.posts)
         self.$store.commit("set", ["posts", self.posts])
         self.$forceUpdate()
       })
@@ -109,7 +108,13 @@ export default {
   outline: none !important
   margin-top: 0 !important
 
-.VueCarousel-navigation-next, .VueCarousel-navigation-prev
+.VueCarousel-navigation-button
+  background-color: #404040 !important
+  border-radius: 50%
+  height: 2em
+  width: 2em
+  line-height: 0
+  box-shadow: 1px 1px 25px -5px black
   outline: none !important
   color: #FFF !important
   font-size: 16px

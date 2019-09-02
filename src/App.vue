@@ -1,19 +1,21 @@
 <template lang="pug">
 #app
   nav
-    .left
-      img(src="./assets/ApolloStudio_Logo_White.svg" @click="$router.push('/')")
+    .left(@click="$router.push('/')")
+      img(src="./assets/ApolloStudio_Logo_White.svg")
       span.mono Apollo Studio
     .right
-      template(v-for="(link, key) in nav" v-if="link")
-        a(v-if="link.search('https://') >= 0" :href="link" target="_blank") {{key}}
-        router-link(v-else :to="link") {{key}}
+      template(v-for="(link, key) in nav" v-if="link && key !== $route.name")
+        a.width(v-if="link.search('https://') >= 0" :href="link" target="_blank") {{key}}
+        router-link.width(v-else :to="link") {{key}}
       hr
       i.fab.fa-patreon(@click="open('https://www.patreon.com/mat1jaczyyy')")
       i.fab.fa-discord(@click="open('https://discord.gg/2ZSHYHA')")
       img(src="./assets/mat1-logo.png" @click="open('https://mat1jaczyyy.com')")
   main
-    router-view.route
+    .router
+      transition(name="route")
+        router-view.route
 </template>
 
 <script>
@@ -36,6 +38,7 @@ export default {
   },
   mounted() {
     window.vue = this
+    const self = this
     document.title = "Apollo Studio"
   },
 }
@@ -96,9 +99,9 @@ button.slide
     cursor: pointer
     color: #fff
 
-  &:hover::before
-    transform-origin: center bottom
-    transform: scaleY(1)
+    &::before
+      transform-origin: center bottom
+      transform: scaleY(1)
 
 #app
   height: 100%
@@ -129,16 +132,30 @@ button.slide
       transform: scaleX(1)
 
   main
-    padding: 64px 3vw 0 3vw
+    padding: 64px 7vw 0 7vw
     display: flex
     justify-content: center
     align-items: flex-start
+    position: relative
 
     @media only screen and (min-width: 1000px)
       padding: 32px 7vw 0 7vw
 
-    >.route
-      max-width: 1300px
+    >.router
+      display: flex
+      justify-content: center
+
+      >.route
+        max-width: 1300px
+        width: calc(100% - 14vw)
+        position: absolute
+        opacity: 1
+
+        &.route-enter-active, &.route-leave-active
+          transition: 0.3s
+
+        &.route-enter, &.route-leave-to
+          opacity: 0
 
   nav
     height: 64px
@@ -152,14 +169,22 @@ button.slide
       display: flex
       justify-content: center
       align-items: center
+      cursor: pointer
+
+      >img
+        height: 70%
+        margin: 0 16px
+        cursor: pointer
 
       span
         font-weight: bold
+        user-select: none
 
     .right
       position: absolute
       right: 16px
       display: flex
+      transition: 0.5s ease
 
       hr
         height: 32px
@@ -187,6 +212,15 @@ button.slide
         display: flex
         justify-content: center
         align-items: center
+        overflow: hidden
+        max-width: var(--max-width)
+
+        &.nav-enter-active, &.nav-leave-active
+          transition: 0.5s
+
+        &.nav-enter, &.nav-leave-to
+          max-width: 0
+          margin: 0
 
         &::before
           background-color: #DCDCDC
@@ -199,11 +233,6 @@ button.slide
         top: 64px
         right: 50%
         transform: translate(50%, 50%)
-
-    img
-      height: 75%
-      margin: 0 16px
-      cursor: pointer
 
     span
       font-size: 1.5em

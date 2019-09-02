@@ -38,11 +38,13 @@ export default {
     font-size: 1.2em
 
     // button.slide
-    //   &::before
-    //     bottom: 5px
-
+    // &::before
+    // bottom: 5px
     p
       text-align: justify
+
+      @media only screen and (max-width: 999px)
+        text-align: left
 
     .markdown-body h1, .markdown-body h2
       border-bottom: 1px solid #424242
@@ -51,6 +53,9 @@ export default {
     h1, h2, h3, h4, h5, h6
       // font-family: "Roboto Mono", monospace
       color: white
+
+    a::before
+      bottom: 0.1em !important
 
     a.anchor
       margin-right: 8px

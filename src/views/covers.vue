@@ -2,9 +2,9 @@
 .covers
   .cover(v-for="cover in covers")
     .right
-      img(:src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`")
+      img(:src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`" @click="open(`https://youtu.be/${cover.video}`)")
     .left
-      img(:src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`")
+      img(:src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`" @click="open(`https://youtu.be/${cover.video}`)")
       .title.mono {{cover.title}}
       .author {{`${cover.author} on ${new Date(cover.published * 1000).toLocaleDateString()}`}}
       .lower
@@ -33,7 +33,6 @@ export default {
     self.db = self.fb.database().ref("covers")
     self.db.on("value", e => {
       self.covers = e.val().reverse()
-      console.log("ajbsfub")
     })
   },
   beforeDestroy() {
@@ -61,6 +60,7 @@ export default {
       img
         max-width: 100%
         border-radius: 5px
+        cursor: pointer
 
     .left
       width: 75%
@@ -75,12 +75,14 @@ export default {
 
       img
         margin-bottom: 8px
+        cursor: pointer
 
         @media only screen and (min-width: 1000px)
           display: none
 
       .title
         font-size: 1.25em
+
         @media only screen and (max-width: 999px)
           text-align: center
 
