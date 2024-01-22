@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import "@acab/reset.css"
+</script>
+
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <header>
+    Apollo Studio
+  </header>
+  <NuxtPage />
 </template>
