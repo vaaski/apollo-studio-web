@@ -6,6 +6,6 @@ const route = useRoute()
   <div>
     <h1>Nuxt Routing set up successfully!</h1>
     <p>Current route: {{ route.path }}</p>
-    <RouterLink to="/blog">Go to blog</RouterLink>
+    <NuxtLink to="/blog">Go to blog</NuxtLink>
   </div>
 </template>

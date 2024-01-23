@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: { strict: true },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "nuxt-icon"],
 })

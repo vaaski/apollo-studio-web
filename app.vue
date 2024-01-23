@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import "@acab/reset.css"
+import "~/assets/base.scss"
+import "@fontsource-variable/outfit"
 </script>
 
 <template>
-  <header>
-    Apollo Studio
-  </header>
-  <NuxtPage />
+  <div id="apollo">
+    <NavBar />
+    <NuxtPage />
+  </div>
 </template>
