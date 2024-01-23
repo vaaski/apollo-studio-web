@@ -10,3 +10,10 @@ import "@fontsource-variable/outfit"
     <NuxtPage />
   </div>
 </template>
+
+<style lang="scss">
+#apollo {
+  display: flex;
+  flex-direction: column;
+}
+</style>

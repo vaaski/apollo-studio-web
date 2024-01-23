@@ -23,20 +23,20 @@ const iconLinks = {
     <div class="spacer"></div>
 
     <div class="links">
-      <NuxtLink
+      <AutoLink
         v-for="(link, text) in links"
         :key="link + text"
         class="underline"
         :to="link"
       >
         {{ text }}
-      </NuxtLink>
+      </AutoLink>
 
       <div class="divider">|</div>
 
-      <NuxtLink v-for="(link, icon) in iconLinks" :key="link + icon" :to="link">
+      <AutoLink v-for="(link, icon) in iconLinks" :key="link + icon" :to="link">
         <Icon :name="icon" />
-      </NuxtLink>
+      </AutoLink>
     </div>
   </header>
 </template>
