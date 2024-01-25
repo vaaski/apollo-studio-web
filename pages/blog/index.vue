@@ -17,7 +17,7 @@ const entries = [...navigation.value]
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
-const formatter = new Intl.DateTimeFormat(navigator.language, {
+const formatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
 })
 </script>
@@ -25,14 +25,16 @@ const formatter = new Intl.DateTimeFormat(navigator.language, {
 <template>
   <div class="blog">
     <ol>
-      <li v-for="entry in entries" :key="entry._path">
-        <RouterLink :to="entry._path!">
-          <h3>{{ entry.title }}</h3>
-          <span v-if="entry.date">{{ formatter.format(entry.date * 1e3) }}</span>
+      <template v-for="entry in entries" :key="entry._path">
+        <li>
+          <RouterLink :to="entry._path!">
+            <h3>{{ entry.title }}</h3>
+            <span v-if="entry.date">{{ formatter.format(entry.date * 1e3) }}</span>
 
-          <p>{{ entry.description }}</p>
-        </RouterLink>
-      </li>
+            <p>{{ entry.description }}</p>
+          </RouterLink>
+        </li>
+      </template>
     </ol>
   </div>
 </template>
@@ -48,11 +50,15 @@ ol {
 }
 
 li {
-  padding: 2rem 3rem;
   margin: 1rem auto;
   max-width: min(1000px, var(--max-content-width));
   box-shadow: 0 0 0 1px var(--color-foreground-dim);
   border-radius: 0.5rem;
+
+  a {
+    display: inline-block;
+    padding: 2rem 3rem;
+  }
 
   h3 {
     font-size: 1.25em;
