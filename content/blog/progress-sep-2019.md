@@ -1,3 +1,7 @@
+---
+date: 1572918188
+---
+
 # Apollo Studio Progress Report: September & October 2019
 
 The single greatest mission of Apollo Studio is to allow for the most complex and versatile effects while simultaneously being as easy as possible to use. These past months have been filled with all kinds of small quality of life improvements that make Apollo Studio easier to use.
@@ -82,7 +86,7 @@ Aaaand of course, we fixed a lot of dumb inconsistencies, crashes, and weirdly b
 
 ## Cover Showcase
 
-Apollo Studio is already a known name across the Launchpad community, and we're happy to see the number of people switching their workflows up and improving their skills. Here are some of the best covers created by Apollo Studio users throughout the last two months: 
+Apollo Studio is already a known name across the Launchpad community, and we're happy to see the number of people switching their workflows up and improving their skills. Here are some of the best covers created by Apollo Studio users throughout the last two months:
 
 [![Borgeous, Taylr Renee - Sweeter Without You](http://img.youtube.com/vi/yA-bFsYRG4I/mqdefault.jpg)](http://www.youtube.com/watch?v=yA-bFsYRG4I "Borgeous, Taylr Renee - Sweeter Without You") [![Terravita x Chime x Akylla - Go Higher](http://img.youtube.com/vi/a-MwTVH-wX8/mqdefault.jpg)](http://www.youtube.com/watch?v=a-MwTVH-wX8 "Terravita x Chime x Akylla - Go Higher") [![Kai Wachi - Cerberus](http://img.youtube.com/vi/iBV5XK5honY/mqdefault.jpg)](http://www.youtube.com/watch?v=iBV5XK5honY "Kai Wachi - Cerberus")
 

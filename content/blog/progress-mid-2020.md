@@ -1,3 +1,7 @@
+---
+date: 1597691618
+---
+
 # Apollo Studio Progress Report: Spring and Summer 2020
 
 Oh look, it's been a while since the last progress report. Hello again everyone, it's been a while! After taking some time off and finding balance in my world, we're proud to finally talk about some of the changes we've managed to squeeze into Apollo Studio over the last couple months. These are mostly system rewrites which make Apollo cleaner and better to use.
@@ -40,7 +44,7 @@ The Fade device has received tons of improvements meant to ease its use. Fades c
 
 ## Cover Showcase
 
-Here are some of the best covers created by Apollo Studio users throughout 2020 so far: 
+Here are some of the best covers created by Apollo Studio users throughout 2020 so far:
 
 [![Sickrate & Rentz - Ready For Ya](http://img.youtube.com/vi/tDu-OkYSyeU/mqdefault.jpg)](http://www.youtube.com/watch?v=tDu-OkYSyeU "Sickrate & Rentz - Ready For Ya") [![Domastic - Wait For Me (MOTi edit)](http://img.youtube.com/vi/WYl1MFArZ04/mqdefault.jpg)](http://www.youtube.com/watch?v=bS5EyN2-OmE "Domastic - Wait For Me (MOTi edit)") [![Mike Williams x Mesto - Wait Another Day](http://img.youtube.com/vi/6JroZZstg_s/mqdefault.jpg)](http://www.youtube.com/watch?v=6JroZZstg_s "Mike Williams x Mesto - Wait Another Day") [![Teminite - Uprising](http://img.youtube.com/vi/jnBIvhGSLgA/mqdefault.jpg)](http://www.youtube.com/watch?v=jnBIvhGSLgA "Teminite - Uprising") [![K-391, Alan Walker & Ahrix - End of Time](http://img.youtube.com/vi/-Q7A0GK_S98/mqdefault.jpg)](http://www.youtube.com/watch?v=-Q7A0GK_S98 "K-391, Alan Walker & Ahrix - End of Time")
 

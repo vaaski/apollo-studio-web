@@ -9,8 +9,17 @@ const { data: navigation } = await useAsyncData("blog-entries", () => {
 })
 if (!navigation.value) throw new Error("No navigation")
 
-const entries = [...navigation.value].filter((entry) => entry._path).reverse()
-console.log(entries)
+const entries = [...navigation.value]
+  .filter((entry) => entry._path)
+  .sort((a, b) => {
+    if (!a.date) return 1
+    if (!b.date) return -1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
+
+const formatter = new Intl.DateTimeFormat(navigator.language, {
+  dateStyle: "medium",
+})
 </script>
 
 <template>
@@ -19,6 +28,8 @@ console.log(entries)
       <li v-for="entry in entries" :key="entry._path">
         <RouterLink :to="entry._path!">
           <h3>{{ entry.title }}</h3>
+          <span v-if="entry.date">{{ formatter.format(entry.date * 1e3) }}</span>
+
           <p>{{ entry.description }}</p>
         </RouterLink>
       </li>
@@ -44,11 +55,15 @@ li {
   border-radius: 0.5rem;
 
   h3 {
-    margin-bottom: 0.5rem;
     font-size: 1.25em;
   }
 
+  span {
+    color: var(--color-foreground-dim);
+  }
+
   p {
+    margin-top: 0.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

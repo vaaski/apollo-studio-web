@@ -1,3 +1,7 @@
+---
+date: 1583041251
+---
+
 # Apollo Studio Progress Report: December 2019, January & February 2020
 
 The bridge towards the new year marks a stale period for the development of Apollo Studio. Most improvements were either quality of life features or performance optimizations, but there were some new highly requested devices sprinkled in as well! Today we won't be putting much focus on that though, we're going to be talking more about the situation with modern Launchpads as well as the future of Apollo Studio.
@@ -57,7 +61,7 @@ For such a simple change, the work that's built up around it seems unreal and ma
 
 ...instead, when we woke up, we've had quite a rough awakening. Immediately we've learned that Novation have released Legacy mode, which is an official update that does pretty much what we've done: enables carefree Drum Rack layout and backwards compatibility, while additionally retaining Programmer mode's default functionality. All the work we've built up during the last two months, culminated in it becoming utterly useless, as the new update was available similarly via Components. Another analogy: we not only got off on the wrong foot that morning, we got up on the wrong hand, fell on our head and had to be rushed to hospital. Keep in mind we've transitioned from the previous analogy to this one.
 
-[![WE FIXED THE LAUNCHP-- wait novation fixed it?](http://img.youtube.com/vi/uAl4xSpHFRQ/mqdefault.jpg)](http://www.youtube.com/watch?v=uAl4xSpHFRQ "WE FIXED THE LAUNCHP-- wait novation fixed it?") 
+[![WE FIXED THE LAUNCHP-- wait novation fixed it?](http://img.youtube.com/vi/uAl4xSpHFRQ/mqdefault.jpg)](http://www.youtube.com/watch?v=uAl4xSpHFRQ "WE FIXED THE LAUNCHP-- wait novation fixed it?")
 
 To say the least, while we're sorry to see our work become obsoleted without a chance to show how much effort and care went into it, we're happy an official solution exists, rather than people running hacked unofficial firmware on their brand new devices. It'll for sure be better in the long term as well, as further updates won't require recreating the patches, as well as better marketing the update to end users. We've still made it available as an easy firmware updater though, without the patches (as there's no need for them anymore).
 
@@ -91,7 +95,7 @@ As of right now my life situation has changed (partially impacted by losing 2 mo
 
 ## Cover Showcase
 
-Here are some of the best covers created by Apollo Studio users throughout the month: 
+Here are some of the best covers created by Apollo Studio users throughout the month:
 
 [![Hillsong Young & Free - Noël](http://img.youtube.com/vi/E2aEwtZ2YVw/mqdefault.jpg)](http://www.youtube.com/watch?v=E2aEwtZ2YVw "Hillsong Young & Free - Noël") [![Alan Walker - Alone Pt. 2](http://img.youtube.com/vi/WYl1MFArZ04/mqdefault.jpg)](http://www.youtube.com/watch?v=WYl1MFArZ04 "Alan Walker - Alone Pt. 2") [![Song of Healing - The Legend of Zelda: Majoras Mask](http://img.youtube.com/vi/DKYI4_I4d_k/mqdefault.jpg)](http://www.youtube.com/watch?v=DKYI4_I4d_k "Song of Healing - The Legend of Zelda: Majoras Mask")
 

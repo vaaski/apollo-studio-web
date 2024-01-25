@@ -1,3 +1,7 @@
+---
+date: 1576291440
+---
+
 # Apollo Studio Progress Report: November 2019
 
 November was an exciting month for the development of Apollo Studio. After spending the majority of the last couple months optimizing Apollo and adding small features, we thought it's about time Apollo can pack a larger punch, so today we're going to mostly be discussing brand new features, some of which are new to Launchpad light effects as a whole. But before we get into that, we've got more Launchpad X regressions and illogicalities to uncover...
@@ -20,7 +24,7 @@ Again and again Novation are pulling dumb design decisions like this expansion o
 
 The "fix" is simple, we just revert Apollo's color system back to 6-bit color. 1.2.0 projects will stay backwards compatible, they'll simply have their colors converted to the equivalent color in the current system. I feel like we should never have gotten to the point of having to do this, but I guess we got jebaited by Novation and *hadn't tested the colors thoroughly enough*.
 
-Having my curiosity sparked by this problem, I've had a quick glance into the X's firmware, and it seems to actually use 8-bit values per color channel for describing the internal color palette used to resolve velocities. We're yet to confirm that this is actual 8-bit resolution, the Launchpad might still be discarding bits when forming the final output, and in any case none of this makes any sense whatsoever. 
+Having my curiosity sparked by this problem, I've had a quick glance into the X's firmware, and it seems to actually use 8-bit values per color channel for describing the internal color palette used to resolve velocities. We're yet to confirm that this is actual 8-bit resolution, the Launchpad might still be discarding bits when forming the final output, and in any case none of this makes any sense whatsoever.
 
 Just in case it is seriously using 8 bits though... (╯°□°）╯︵ ┻━┻
 
@@ -66,7 +70,7 @@ Aaaand of course, we fixed even more dumb inconsistencies, crashes, and weirdly 
 
 ## Cover Showcase
 
-Massive props to R.G.PReal for organizing Apollo Studio's first mega collab, with over 10 people participating in the project, some of which are first time Apollo users! Watch it right below. Here are some of the best covers created by Apollo Studio users throughout the month: 
+Massive props to R.G.PReal for organizing Apollo Studio's first mega collab, with over 10 people participating in the project, some of which are first time Apollo users! Watch it right below. Here are some of the best covers created by Apollo Studio users throughout the month:
 
 [![Jason Ross - IOU (Crystal Skies Remix)](http://img.youtube.com/vi/T4-qurdZ6yE/mqdefault.jpg)](http://www.youtube.com/watch?v=T4-qurdZ6yE "Jason Ross - IOU (Crystal Skies Remix)") [![Gareth Emery - Sanctuary (feat. Lucy Saunders) [William Black Remix]](http://img.youtube.com/vi/10Y41LpDaKo/mqdefault.jpg)](http://www.youtube.com/watch?v=10Y41LpDaKo "Gareth Emery - Sanctuary (feat. Lucy Saunders) [William Black Remix]")
 

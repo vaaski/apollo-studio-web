@@ -1,3 +1,7 @@
+---
+date: 1567381800
+---
+
 # Apollo Studio Progress Report: August 2019
 
 The development cycle for Apollo Studio is mostly based on users' needs, rather than the developer's vision for the project. Most changes are relatively small compared to the size of the program, often being no more than bug fixes and minor features which improve the user experience. These small improvements are very important to providing a smoother experience for our users. The Apollo Studio Progress Report is a monthly update highlighting the most important improvements that keep Apollo Studio moving forward.
@@ -18,7 +22,7 @@ Also, turns out we were sending data about left and bottom row lights to MK2 uni
 
 ## macOS Stability Improvements
 
-On launch, the macOS build of Apollo Studio was arguably a disaster compared to the Windows build. With Launchpads not always connecting properly if at all, seemingly random crashes and failure to start, it was extremely frustrating to use. On top of all that, Apollo's installer was mistakenly allowing installation on Macs running El Capitan, when really the lowest version Apollo would run on was Sierra! Additionally, closing Discord while Rich Presence was enabled would crash Apollo. 
+On launch, the macOS build of Apollo Studio was arguably a disaster compared to the Windows build. With Launchpads not always connecting properly if at all, seemingly random crashes and failure to start, it was extremely frustrating to use. On top of all that, Apollo's installer was mistakenly allowing installation on Macs running El Capitan, when really the lowest version Apollo would run on was Sierra! Additionally, closing Discord while Rich Presence was enabled would crash Apollo.
 
 ![](https://cdn.discordapp.com/attachments/321730411854299137/617773378518122496/unknown.png)
 
@@ -66,9 +70,9 @@ As the final highlight of this Progress Report, a new device called Layer Filter
 
 ## Cover Showcase
 
-Since Apollo Studio has released publicly, lots of people rushed to get familiar with the new workflow and enhance their future covers. Here are some of the best covers created by Apollo Studio users throughout the month: 
+Since Apollo Studio has released publicly, lots of people rushed to get familiar with the new workflow and enhance their future covers. Here are some of the best covers created by Apollo Studio users throughout the month:
 
-[![TheFatRat - Stronger](http://img.youtube.com/vi/9RAjLW0wsTE/mqdefault.jpg)](http://www.youtube.com/watch?v=9RAjLW0wsTE "TheFatRat - Stronger") [![Taska Black - Nothing Lasts (feat. Pauline Herr)](http://img.youtube.com/vi/_8qze9zO13k/mqdefault.jpg)](http://www.youtube.com/watch?v=_8qze9zO13k "Taska Black - Nothing Lasts (feat. Pauline Herr)") [![Denking x NEKT - Paint in the Sky](http://img.youtube.com/vi/XdBOQ_Z8oaU/mqdefault.jpg)](http://www.youtube.com/watch?v=XdBOQ_Z8oaU "Denking x NEKT - Paint in the Sky") 
+[![TheFatRat - Stronger](http://img.youtube.com/vi/9RAjLW0wsTE/mqdefault.jpg)](http://www.youtube.com/watch?v=9RAjLW0wsTE "TheFatRat - Stronger") [![Taska Black - Nothing Lasts (feat. Pauline Herr)](http://img.youtube.com/vi/_8qze9zO13k/mqdefault.jpg)](http://www.youtube.com/watch?v=_8qze9zO13k "Taska Black - Nothing Lasts (feat. Pauline Herr)") [![Denking x NEKT - Paint in the Sky](http://img.youtube.com/vi/XdBOQ_Z8oaU/mqdefault.jpg)](http://www.youtube.com/watch?v=XdBOQ_Z8oaU "Denking x NEKT - Paint in the Sky")
 
 ## Special thanks to...
 
