@@ -1,24 +1,28 @@
 :root {
-  --clr-background: #191919;
-  --clr-background-light: #2a2a2a;
-  --clr-text: #dadada;
-  --clr-text-bright: #fefefe;
-  --clr-accent: #0f5f8b;
+  --color-background: #191919;
+  --color-background-light: #2a2a2a;
+  --color-text: #dadada;
+  --color-text-bright: #fefefe;
+  --color-foreground-dim: #707070;
+  --color-accent: #0f5f8b;
+
+  --max-content-width: 85%;
 }
 
 body,
 html,
+#__nuxt,
 #apollo {
-  height: 100svh;
-  width: 100svw;
+  height: 100%;
+  width: 100%;
   font-family: "Outfit Variable", sans-serif;
-  background-color: var(--clr-background);
-  color: var(--clr-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 ::selection {
-  background-color: var(--clr-accent);
-  color: var(--clr-text);
+  background-color: var(--color-accent);
+  color: var(--color-text);
 }
 
 a {
@@ -35,7 +39,7 @@ a.underline {
     left: 0;
     right: 0;
     height: 2px;
-    background-color: var(--clr-accent);
+    background-color: var(--color-accent);
     transform: scaleX(0);
     transition: transform 0.5s ease;
   }
@@ -46,12 +50,13 @@ a.underline {
 }
 
 button {
-  background: var(--clr-background-light);
+  background: var(--color-background-light);
   padding: 0.5rem 1rem;
+  border-radius: 5px;
 
   &.primary {
-    background: var(--clr-accent);
-    color: var(--clr-text-bright);
+    background: var(--color-accent);
+    color: var(--color-text-bright);
   }
 
   & + button {

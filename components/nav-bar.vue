@@ -11,6 +11,12 @@ const iconLinks = {
   "bxl:discord-alt": "https://discord.gg/2ZSHYHA",
   "bxl:github": "https://github.com/mat1jaczyyy/apollo-studio",
 }
+
+const route = useRoute()
+const subtitle = computed(() => {
+  if (route.path.startsWith("/blog")) return "Blog"
+  return ""
+})
 </script>
 
 <template>
@@ -18,6 +24,7 @@ const iconLinks = {
     <NuxtLink to="/" class="wordmark">
       <img src="~/assets/ApolloStudio_Logo_White.svg" alt="Apollo Studio Logo" />
       <span>Apollo Studio</span>
+      <span v-if="subtitle" class="subtitle"> &nbsp;// {{ subtitle }} </span>
     </NuxtLink>
 
     <div class="spacer"></div>
@@ -44,11 +51,12 @@ const iconLinks = {
 <style scoped lang="scss">
 header {
   width: 100%;
-  height: 4rem;
+  position: fixed;
   display: flex;
   align-items: center;
   padding: 0 1rem;
   user-select: none;
+  backdrop-filter: blur(10px);
 }
 
 .links {
@@ -71,12 +79,16 @@ a:has(.icon) {
 }
 
 .divider {
-  opacity: 0.5;
+  color: var(--color-foreground-dim);
   display: inline-block;
 }
 
 .spacer {
   flex: 1;
+}
+
+.subtitle {
+  color: var(--color-foreground-dim);
 }
 
 .wordmark {

@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: min(1200px, 85%);
+  max-width: min(1200px, var(--max-content-width));
   margin: 0 auto;
   gap: 3rem;
 
