@@ -62,6 +62,7 @@ li {
 
   h3 {
     font-size: 1.25em;
+    color: var(--color-text-bright);
   }
 
   span {
