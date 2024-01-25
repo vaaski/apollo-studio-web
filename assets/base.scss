@@ -2,6 +2,7 @@
   --clr-background: #191919;
   --clr-background-light: #2a2a2a;
   --clr-text: #dadada;
+  --clr-text-bright: #fefefe;
   --clr-accent: #0f5f8b;
 }
 
@@ -50,7 +51,7 @@ button {
 
   &.primary {
     background: var(--clr-accent);
-    color: var(--clr-text);
+    color: var(--clr-text-bright);
   }
 
   & + button {

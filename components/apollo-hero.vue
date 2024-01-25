@@ -12,14 +12,13 @@
       </div>
 
       <div class="call-to-action">
-        <button class="shine primary">
-          <AutoLink to="https://github.com/mat1jaczyyy/apollo-studio/releases">
-            Download
-          </AutoLink>
-        </button>
-        <button>
-          <AutoLink to="/blog"> Blog </AutoLink>
-        </button>
+        <AutoLink to="https://github.com/mat1jaczyyy/apollo-studio/releases">
+          <button class="shine primary">Download</button>
+        </AutoLink>
+
+        <AutoLink to="/blog">
+          <button>Blog</button>
+        </AutoLink>
       </div>
     </div>
 
@@ -44,12 +43,12 @@
   }
 }
 
-// .left {
-//   padding: 0 2rem;
-// }
-
 .call-to-action {
   margin-top: 1rem;
+
+  a + a {
+    margin-left: 1rem;
+  }
 }
 
 .intro-text {
