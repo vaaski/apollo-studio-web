@@ -23,7 +23,7 @@ useSeoMeta({
 
   --nav-height: 4rem;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     --nav-height: 5rem;
   }
 }

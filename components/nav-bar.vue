@@ -44,6 +44,9 @@ const subtitle = computed(() => {
       <AutoLink v-for="(link, icon) in iconLinks" :key="link + icon" :to="link">
         <Icon :name="icon" />
       </AutoLink>
+      <AutoLink to="https://mat1jaczyyy.com">
+        <img class="icon" src="~/assets/mat1.png" alt="mat1 stinky">
+      </AutoLink>
     </div>
   </header>
 </template>
@@ -58,7 +61,7 @@ header {
   user-select: none;
   backdrop-filter: blur(10px);
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     flex-direction: column;
   }
 }
@@ -67,7 +70,7 @@ header {
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     margin-bottom: 0.5rem;
   }
 
@@ -75,7 +78,7 @@ header {
   > .divider {
     margin-left: 1rem;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       margin-left: 0.5em;
     }
   }
@@ -88,6 +91,11 @@ a:has(.icon) {
   .icon {
     font-size: 1.5rem;
     min-width: 1em;
+  }
+
+  img {
+    width: 1em;
+    height: 1em;
   }
 }
 
