@@ -67,9 +67,17 @@ header {
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: 600px) {
+    margin-bottom: 0.5rem;
+  }
+
   > a,
   > .divider {
     margin-left: 1rem;
+
+    @media screen and (max-width: 600px) {
+      margin-left: 0.5em;
+    }
   }
 }
 
@@ -79,6 +87,7 @@ a:has(.icon) {
 
   .icon {
     font-size: 1.5rem;
+    min-width: 1em;
   }
 }
 
