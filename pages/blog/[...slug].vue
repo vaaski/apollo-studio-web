@@ -55,6 +55,7 @@
 
   p {
     margin-bottom: 0.69em;
+    text-align: justify;
   }
 
   p:has(a > img) {
@@ -68,6 +69,11 @@
     img {
       margin: 0;
     }
+  }
+
+  :where(ul, ol) {
+    margin-left: 2rem;
+    list-style: initial;
   }
 }
 </style>

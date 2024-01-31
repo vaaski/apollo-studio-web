@@ -62,7 +62,7 @@ header {
   backdrop-filter: blur(10px);
   z-index: 99999;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
   }
 }
@@ -71,7 +71,7 @@ header {
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     margin-bottom: 0.5rem;
   }
 
@@ -79,7 +79,7 @@ header {
   > .divider {
     margin-left: 1rem;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
       margin-left: 0.5em;
     }
   }
