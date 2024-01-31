@@ -22,6 +22,10 @@ useSeoMeta({
   flex-direction: column;
 
   --nav-height: 4rem;
+
+  @media screen and (max-width: 600px) {
+    --nav-height: 5rem;
+  }
 }
 
 .nav-bar {

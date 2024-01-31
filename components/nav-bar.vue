@@ -7,7 +7,7 @@ const links = {
 }
 
 const iconLinks = {
-  "bxl:patreon": "https://patreon.com/mat1jaczyyy",
+  "cib:ko-fi": "https://ko-fi.com/mat1jaczyyy",
   "bxl:discord-alt": "https://discord.gg/2ZSHYHA",
   "bxl:github": "https://github.com/mat1jaczyyy/apollo-studio",
 }
@@ -23,8 +23,8 @@ const subtitle = computed(() => {
   <header>
     <NuxtLink to="/" class="wordmark">
       <img src="~/assets/ApolloStudio_Logo_White.svg" alt="Apollo Studio Logo" />
-      <span>Apollo Studio</span>
-      <span v-if="subtitle" class="subtitle"> &nbsp;// {{ subtitle }} </span>
+      <span>Apollo&nbsp;Studio</span>
+      <span v-if="subtitle" class="subtitle"> &nbsp;//&nbsp;{{ subtitle }} </span>
     </NuxtLink>
 
     <div class="spacer"></div>
@@ -57,6 +57,10 @@ header {
   padding: 0 1rem;
   user-select: none;
   backdrop-filter: blur(10px);
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .links {

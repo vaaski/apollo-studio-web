@@ -30,13 +30,11 @@
 
 <style scoped lang="scss">
 .hero {
-  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: min(1200px, var(--max-content-width));
-  margin: 0 auto;
+  margin: auto;
   gap: 3rem;
+  padding: 5rem 0;
 
   @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
