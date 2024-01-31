@@ -60,6 +60,7 @@ header {
   padding: 0 1rem;
   user-select: none;
   backdrop-filter: blur(10px);
+  z-index: 99999;
 
   @media screen and (max-width: 700px) {
     flex-direction: column;

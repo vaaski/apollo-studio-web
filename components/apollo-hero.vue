@@ -8,6 +8,8 @@
         <br />
         The innovation lies in support for true RGB colors (all 262k of them!), an
         improved workflow and better resource management.
+        <br />
+        <br />
         <b>Fly your Launchpad to the moon. ☆.。.:*・°☆</b>
       </div>
 

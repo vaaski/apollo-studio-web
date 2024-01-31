@@ -11,6 +11,28 @@
   padding: 1rem;
   padding-bottom: 3rem;
 
+  a:not(:has(img)) {
+    color: var(--color-accent);
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--color-accent);
+      transform: scaleX(0);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -20,18 +42,32 @@
   a:has(img) {
     margin: 0.5em 0;
     color: var(--color-text-bright);
+
+    a {
+      color: inherit;
+    }
   }
 
   img {
     max-width: 100%;
-    margin: 1rem 0;
+    margin: 1rem auto;
+  }
+
+  p {
+    margin-bottom: 0.69em;
   }
 
   p:has(a > img) {
-    margin-left: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0 1rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+
+    img {
+      margin: 0;
+    }
   }
 }
 </style>
