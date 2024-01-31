@@ -2,7 +2,7 @@
 const links = {
   Download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
   Blog: "/blog",
-  // Covers: "/covers",
+  Covers: "/covers",
   Guides: "https://github.com/mat1jaczyyy/apollo-studio/wiki",
 }
 
