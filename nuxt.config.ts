@@ -3,4 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: { strict: true },
   modules: ["@nuxt/content", "nuxt-icon"],
+  app: {
+    pageTransition: { name: "page", mode: "out-in" },
+  },
 })

@@ -25,6 +25,15 @@ html,
   color: var(--color-text);
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: all 75ms;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
 a {
   text-decoration: none;
 }
