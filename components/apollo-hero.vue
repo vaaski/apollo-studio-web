@@ -25,7 +25,7 @@
     </div>
 
     <div class="gallery">
-      <img src="~/assets/screenshots/track1.png" alt="" />
+      <ImageSlider />
     </div>
   </div>
 </template>
@@ -40,6 +40,7 @@
 
   @media screen and (max-width: 1000px) {
     flex-direction: column-reverse;
+    align-items: center;
   }
 }
 
@@ -55,5 +56,12 @@
   max-width: 450px;
   font-size: 1.2rem;
   text-align: justify;
+}
+
+.gallery {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

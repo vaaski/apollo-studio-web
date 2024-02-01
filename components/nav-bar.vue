@@ -15,6 +15,7 @@ const iconLinks = {
 const route = useRoute()
 const subtitle = computed(() => {
   if (route.path.startsWith("/blog")) return "Blog"
+  if (route.path.startsWith("/covers")) return "Covers"
   return ""
 })
 </script>
