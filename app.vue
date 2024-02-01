@@ -2,11 +2,6 @@
 import "@acab/reset.css"
 import "~/assets/base.scss"
 import "@fontsource-variable/outfit"
-
-useSeoMeta({
-  title: "Apollo Studio",
-  description: "A standalone editor and live playback engine for Launchpad light effects",
-})
 </script>
 
 <template>
