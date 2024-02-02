@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useElementHover } from "@vueuse/core"
-
 const IMAGES = [
   "/screenshots/pattern.png",
   "/screenshots/tracks.png",
@@ -10,46 +8,21 @@ const IMAGES = [
 ]
 
 const SLIDE_DURATION = 3e3
-
-const wait = (t: number): Promise<void> => new Promise((r) => setTimeout(r, t))
-const slides = ref<HTMLDivElement[]>()
-const slider = ref<HTMLDivElement>()
-const sliderHovered = useElementHover(slider)
-
-const hideScrollbar = ref(false)
-
-let currentSlide = 0
-const startSlider = async () => {
-  if (!slides.value) return
-  if (!slider.value) return
-  hideScrollbar.value = true
-
-  await wait(SLIDE_DURATION)
-  while (!sliderHovered.value) {
-    currentSlide = (currentSlide + 1) % slides.value.length
-
-    slides.value[currentSlide]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    })
-
-    await wait(SLIDE_DURATION)
-  }
-
-  watch(sliderHovered, startSlider, { once: true })
-}
-
-onMounted(startSlider)
 </script>
 
 <template>
   <div class="slider">
-    <div ref="slider" class="slides" :class="{ 'hide-scrollbar': hideScrollbar }">
-      <div v-for="image in IMAGES" :key="image" ref="slides">
-        <img :src="image" alt="Apollo Studio Screenshot" />
-      </div>
-    </div>
+    <ClientOnly>
+      <FancySlider :images="IMAGES" :slide-duration="SLIDE_DURATION" />
+
+      <template #fallback>
+        <div class="slides">
+          <div v-for="image in IMAGES" :key="image">
+            <img :src="image" alt="Apollo Studio Screenshot" />
+          </div>
+        </div>
+      </template>
+    </ClientOnly>
   </div>
 </template>
 
@@ -75,22 +48,6 @@ onMounted(startSlider)
   scroll-snap-type: mandatory;
 }
 
-.slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-.slides::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
-}
-.slides::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.slides.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
@@ -107,5 +64,6 @@ img {
   max-height: 300px;
   height: 100%;
   object-fit: contain;
+  -webkit-user-drag: none;
 }
 </style>
