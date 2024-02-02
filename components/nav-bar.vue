@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ConfettiExplosion from "vue-confetti-explosion"
+
 const links = {
   Download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
   Blog: "/blog",
@@ -18,13 +20,23 @@ const subtitle = computed(() => {
   if (route.path.startsWith("/covers")) return "Covers"
   return ""
 })
+
+const showEgg = ref(false)
+const egg = () => {
+  if (route.path === "/") {
+    showEgg.value = true
+  }
+}
 </script>
 
 <template>
   <header>
-    <NuxtLink to="/" class="wordmark">
+    <NuxtLink to="/" class="wordmark" @click="egg">
       <img src="~/assets/ApolloStudio_Logo_White.svg" alt="Apollo Studio Logo" />
       <span>Apollo&nbsp;Studio</span>
+
+      <ConfettiExplosion v-if="showEgg" :stage-height="1080" :force="0.2" :particle-count="100" />
+
       <span v-if="subtitle" class="subtitle"> &nbsp;//&nbsp;{{ subtitle }} </span>
     </NuxtLink>
 
@@ -46,7 +58,7 @@ const subtitle = computed(() => {
         <Icon :name="icon" />
       </AutoLink>
       <AutoLink to="https://mat1jaczyyy.com">
-        <img class="icon" src="~/assets/mat1.png" alt="mat1 stinky">
+        <img class="icon" src="~/assets/mat1.png" alt="mat1 stinky" />
       </AutoLink>
     </div>
   </header>
@@ -123,6 +135,13 @@ a:has(.icon) {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
+  position: relative;
+
+  .confetti-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
 
   > img {
     height: 2rem;
