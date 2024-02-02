@@ -35,6 +35,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
           </RouterLink>
         </li>
       </template>
+      <BottomCredits />
     </ol>
   </div>
 </template>

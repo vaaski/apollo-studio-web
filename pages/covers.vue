@@ -46,6 +46,7 @@ const formatter = new Intl.DateTimeFormat("en-US", {
         <img :src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`" alt="" />
       </li>
     </template>
+    <BottomCredits />
   </ol>
 </template>
 
