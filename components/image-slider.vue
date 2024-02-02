@@ -17,9 +17,14 @@ const SLIDE_DURATION = 3e3
 
       <template #fallback>
         <div class="slides">
-          <div v-for="image in IMAGES" :key="image">
+          <div v-for="(image, index) in IMAGES" :id="`image-${index}`" :key="image">
             <img :src="image" alt="Apollo Studio Screenshot" />
           </div>
+        </div>
+        <div class="navigation">
+          <a v-for="(_, index) in IMAGES" :key="_" :href="`#image-${index}`">
+            <div class="dot"></div
+          ></a>
         </div>
       </template>
     </ClientOnly>
@@ -35,6 +40,29 @@ const SLIDE_DURATION = 3e3
   width: var(--slider-size);
 }
 
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  a {
+    padding: 5px;
+
+    > .dot {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-foreground-dim);
+    }
+
+    &:active > .dot,
+    &:focus > .dot {
+      background-color: var(--color-accent);
+    }
+  }
+}
+
 .slides {
   display: flex;
 
@@ -46,6 +74,14 @@ const SLIDE_DURATION = 3e3
 
   scroll-snap-points-x: repeat(var(--slider-size));
   scroll-snap-type: mandatory;
+
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Disable scrollbar Chrome/Safari/Webkit */
+  }
 }
 
 .slides > div {
