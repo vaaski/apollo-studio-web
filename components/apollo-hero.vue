@@ -6,8 +6,9 @@
         light effects, solving all the problems we experience every day in Ableton Live.
         <br />
         <br />
-        The innovation lies in support for true RGB colors (all 262k of them!), an
-        improved workflow and better resource management.
+        The innovation lies in support for true
+        <span class="rainbow-text">RGB colors</span> (all 262k of them!), an improved
+        workflow and better resource management.
         <br />
         <br />
         <b>Fly your Launchpad to the moon. ☆.。.:*・°☆</b>
@@ -63,5 +64,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, violet, red);
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 20s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: -200%;
+  }
 }
 </style>
