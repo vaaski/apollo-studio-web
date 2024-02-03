@@ -53,7 +53,7 @@ ol {
 li {
   margin: 1rem auto;
   max-width: min(1000px, var(--max-content-width));
-  box-shadow: 0 0 0 1px var(--color-foreground-dim);
+  box-shadow: 0 0 0 1px var(--color-foreground-dim), 1px 1px 25px rgba(0, 0, 0, 0.25);
   border-radius: 0.5rem;
 
   a {
