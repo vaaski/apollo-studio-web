@@ -66,22 +66,4 @@
   justify-content: center;
   align-items: center;
 }
-
-.rainbow-text {
-  background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, violet, red);
-  background-size: 400%;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: rainbow 20s linear infinite;
-}
-
-@keyframes rainbow {
-  0% {
-    background-position: 200%;
-  }
-  100% {
-    background-position: -200%;
-  }
-}
 </style>

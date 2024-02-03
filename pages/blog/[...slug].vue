@@ -51,6 +51,8 @@
   img {
     max-width: 100%;
     margin: 1rem auto;
+    box-shadow: var(--big-shadow-soft);
+    border-radius: 5px;
   }
 
   p {

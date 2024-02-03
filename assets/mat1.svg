@@ -1,0 +1,19 @@
+<svg width="768" height="768" viewBox="0 0 768 768" fill="none" xmlns="http://www.w3.org/2000/svg" class="mat1-logo">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M89 186L421 284L662 151L89 186Z" fill="white" />
+  <path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M445 681L424 289L661 153L445 681Z" fill="white" />
+  <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M88 187L418 290L444 681L88 187Z" fill="white" />
+
+  <defs>
+    <style>
+      .mat1-logo>path {
+        fill: #fefefe;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .mat1-logo>path {
+          fill: #090909;
+        }
+      }
+    </style>
+  </defs>
+</svg>

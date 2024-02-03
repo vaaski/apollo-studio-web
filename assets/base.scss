@@ -5,8 +5,22 @@
   --color-text-bright: #fefefe;
   --color-foreground-dim: #707070;
   --color-accent: #0f5f8b;
+  --color-on-accent: #fefefe;
+  --big-shadow-soft: 1px 1px 25px rgba(0, 0, 0, 0.25);
 
   --max-content-width: 85%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #f0f0f0;
+    --color-background-light: #d7d7d7;
+    --color-text: #181818;
+    --color-text-bright: #090909;
+    --color-foreground-dim: #a8a8a8;
+    --color-accent: #0f5f8b;
+    --big-shadow-soft: 1px 1px 25px rgba(0, 0, 0, 0.125);
+  }
 }
 
 body,
@@ -65,7 +79,7 @@ button {
 
   &.primary {
     background: var(--color-accent);
-    color: var(--color-text-bright);
+    color: var(--color-on-accent);
   }
 
   & + button {
@@ -101,9 +115,26 @@ button.shine {
     transform: translate3d(-625%, 0, 0) rotate(35deg);
     animation: shine 7s ease-in-out infinite;
   }
+}
 
-  // &:hover::after {
-  //   transition: transform 0.45s ease-in-out;
-  //   transform: translate3d(200%, 0, 0) rotate(35deg);
-  // }
+.rainbow-text {
+  background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, violet, red);
+  background-size: 400%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 20s linear infinite;
+
+  @media (prefers-color-scheme: light) {
+    filter: brightness(0.8);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: -200%;
+  }
 }

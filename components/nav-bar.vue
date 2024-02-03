@@ -58,7 +58,7 @@ const egg = () => {
         <Icon :name="icon" />
       </AutoLink>
       <AutoLink to="https://mat1jaczyyy.com">
-        <img class="icon" src="~/assets/mat1.png" alt="mat1 stinky" />
+        <img class="icon" src="~/assets/mat1.svg" alt="mat1 stinky" />
       </AutoLink>
     </div>
   </header>
@@ -130,7 +130,7 @@ a:has(.icon) {
   display: flex;
   align-items: center;
   height: 100%;
-  color: #fff;
+  color: var(--color-text-bright);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 600;
