@@ -34,6 +34,7 @@
 <style scoped lang="scss">
 .hero {
   display: flex;
+  align-items: center;
   max-width: min(1200px, var(--max-content-width));
   margin: auto;
   gap: 3rem;

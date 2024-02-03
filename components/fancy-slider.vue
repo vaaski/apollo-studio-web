@@ -54,4 +54,9 @@ const properties = defineProps({
 .carousel__icon {
   filter: drop-shadow(0 0 5px black);
 }
+
+.carousel__item {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin: 0.5rem 1rem;
+}
 </style>
