@@ -44,6 +44,7 @@ const properties = defineProps({
 
 .carousel__pagination-button::after {
   background-color: var(--color-foreground-dim);
+  border-radius: 2px;
 }
 
 .carousel__pagination-button:hover::after,
