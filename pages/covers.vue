@@ -33,9 +33,10 @@ const formatter = new Intl.DateTimeFormat("en-US", {
       <li>
         <div class="text">
           <h3>{{ cover.title }}</h3>
-          <span v-if="cover.published">
+          <span class="info date">
             {{ formatter.format(cover.published * 1e3) }}
           </span>
+          <span class="info author" :title="cover.author">{{ cover.author }}</span>
 
           <div class="actions">
             <AutoLink :to="`https://youtu.be/${cover.video}`">
@@ -48,7 +49,10 @@ const formatter = new Intl.DateTimeFormat("en-US", {
           </div>
         </div>
 
-        <img :src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`" alt="" />
+        <img
+          :src="`https://img.youtube.com/vi/${cover.video}/mqdefault.jpg`"
+          alt="youtube thumbnail"
+        />
       </li>
     </template>
     <BottomCredits />
@@ -95,6 +99,10 @@ li {
       }
     }
 
+    a {
+      margin-top: 1rem;
+    }
+
     a + a {
       margin-left: 1rem;
     }
@@ -103,6 +111,7 @@ li {
   img {
     width: 200px;
     margin: 1rem 0;
+    object-fit: contain;
   }
 
   a {
@@ -114,8 +123,16 @@ li {
     color: var(--color-text-bright);
   }
 
-  span {
+  span.info {
     color: var(--color-foreground-dim);
+
+    &.date {
+      font-size: 1.1em;
+    }
+
+    &.author {
+      opacity: 0.5;
+    }
   }
 
   p {
