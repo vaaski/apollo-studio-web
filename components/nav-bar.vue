@@ -35,7 +35,7 @@ const egg = () => {
       <img src="~/assets/ApolloStudio_Logo_White.svg" alt="Apollo Studio Logo" />
       <span>Apollo&nbsp;Studio</span>
 
-      <ConfettiExplosion v-if="showEgg" :stage-height="1080" :force="0.2" :particle-count="100" />
+      <ConfettiExplosion v-if="showEgg" :stage-height="1440" :force="0.2" :particle-count="100" />
 
       <span v-if="subtitle" class="subtitle"> &nbsp;//&nbsp;{{ subtitle }} </span>
     </NuxtLink>
