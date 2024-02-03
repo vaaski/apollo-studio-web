@@ -1,6 +1,7 @@
 <template>
   <div class="bottom-credits">
     <span>
+      blog
       <a href="https://github.com/vaaski/apollo-studio-web" class="built">built</a> with
       <a href="https://nuxt.com/" class="nuxt">nuxt</a> by
       <a href="https://vaaski.dev" class="vaaski">vaaski</a>
