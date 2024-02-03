@@ -1,4 +1,9 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "Apollo Studio // Covers",
+  description: "Watch the latest covers made possible with Apollo Studio",
+})
+
 export type Cover = {
   author: string
   download?: string

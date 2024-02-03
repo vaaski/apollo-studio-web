@@ -2,7 +2,7 @@
 import ConfettiExplosion from "vue-confetti-explosion"
 
 const links = {
-  Download: "https://github.com/mat1jaczyyy/apollo-studio/releases",
+  Download: "https://github.com/mat1jaczyyy/apollo-studio/releases/latest",
   Blog: "/blog",
   Covers: "/covers",
   Guides: "https://github.com/mat1jaczyyy/apollo-studio/wiki",
