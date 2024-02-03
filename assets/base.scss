@@ -119,6 +119,16 @@ button.shine {
 
 .rainbow-text {
   background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, violet, red);
+  background-image: linear-gradient(
+    45deg,
+    oklch(62.8% 0.2876 29.25),
+    oklch(79.27% 0.1957 70.67),
+    oklch(96.8% 0.21 109.77),
+    oklch(51.98% 0.21 142.495),
+    oklch(90.54% 0.164 194.769),
+    oklch(76.19% 0.2658 327.21),
+    oklch(62.8% 0.2876 29.25)
+  );
   background-size: 400%;
   color: transparent;
   -webkit-background-clip: text;
